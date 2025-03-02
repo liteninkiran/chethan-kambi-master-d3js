@@ -1,0 +1,3 @@
+rect {
+    transform: rotate(20deg) translate(40px, 40px) skewX(20deg) scale(0.5);
+}
