@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Project</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="prj_colouring_elements.css">
+    </head>
+
+    <body>
+
+        <div id="title">
+            <h1>Project: Colouring Elements</h1>
+        </div>
+
+        <div class="buttons">
+            <button type="submit" value="select">Select</button>
+            <button type="submit" value="selectAll">Select All</button>
+            <button type="submit" value="filterOdd">Filter Odd</button>
+            <button type="submit" value="filterEven">Filter Even</button>
+        </div>
+
+        <div class="circles">
+            <svg width='400' height='100'>
+                <circle class='circle' r='50' cx='50' cy='50'></circle>
+                <circle class='circle' r='50' cx='150' cy='50'></circle>
+                <circle class='circle' r='50' cx='250' cy='50'></circle>
+                <circle class='circle' r='50' cx='350' cy='50'></circle>
+            </svg>
+        </div>
+
+        <div class="squares">
+            <svg width='400' height='100'>
+                <rect class='square' x='5' y='5' width='90' height='90'></rect>
+                <rect class='square' x='105' y='5' width='90' height='90'></rect>
+                <rect class='square' x='205' y='5' width='90' height='90'></rect>
+                <rect class='square' x='305' y='5' width='90' height='90'></rect>
+            </svg>
+        </div>
+
+        <div class="rects">
+            <svg width='400' height='200'>
+                <rect class='rectangle' x='0' y='0' width='400' height='40'></rect>
+                <rect class='rectangle' x='0' y='45' width='400' height='40'></rect>
+                <rect class='rectangle' x='0' y='90' width='400' height='40'></rect>
+                <rect class='rectangle' x='0' y='135' width='400' height='40'></rect>
+            </svg>
+        </div>
+
+        <div id="output">
+            <h3></h3>
+        </div>
+
+        <script src="/d3.v7.min.js"></script>
+        <script src="prj_colouring_elements.js"></script>
+
+    </body>
+
+</html>
