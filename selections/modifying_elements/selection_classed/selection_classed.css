@@ -1,0 +1,19 @@
+line {
+    stroke: brown;
+}
+
+.gray {
+    stroke: darkgreen;
+}
+
+.stroke-width {
+    stroke-width: 10px;
+}
+
+.stroke-opacity {
+    stroke-opacity: 50%;
+}
+
+.stroke-dasharray {
+    stroke-dasharray: 50 10;
+}
