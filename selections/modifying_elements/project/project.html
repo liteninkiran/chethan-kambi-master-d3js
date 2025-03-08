@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Project</title>
+        <link rel="stylesheet" href="project.css">
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <div id="title">
+                <h1>IMDB Rating</h1>
+                <p>Top 10 Grossing English Movies For 2019</p>
+            </div>
+
+            <div id="movieinfo">
+                <div id="movielist"></div>
+                <div id="moviepost"></div>
+            </div>
+
+            <form id="choicesubmit">
+
+                <label>U</label>
+                <input id="cbu" type="checkbox">
+
+                <label>PG</label>
+                <input id="cbpg" type="checkbox">
+
+                <label>12A</label>
+                <input id="cb12a" type="checkbox">
+
+                <label>15</label>
+                <input id="cb15" type="checkbox">
+
+                <br>
+
+                <input id="submit" value="Submit" type="submit">
+
+            </form>
+
+            <p id="feedback"></p>
+
+            <div id="charts">
+                <div id="cont"></div>
+                <div id="legend"></div>
+                <svg id="gross"></svg>
+                <svg id="dura"></svg>
+                <svg id="votes"></svg>
+            </div>
+
+        </div>
+
+        <script src="/d3.v7.min.js"></script>
+        <script src="project.js"></script>
+
+    </body>
+
+</html>
