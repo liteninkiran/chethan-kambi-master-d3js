@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Project</title>
+        <link rel="stylesheet" href="project.css">
+    </head>
+
+    <body>
+
+        <div class="flex-row">
+            <div id="title">
+                <h1>FORD - US VEHICLE SALES</h1>
+                <p>The sales figures are for 2018 and 2019.</p>
+                <p>Includes information on every quarter and the type of vehicle.</p>
+            </div>
+            <div id="image"></div>
+        </div>
+
+        <div>
+            <button id="gen-info">Generate</button>
+        </div>
+
+        <div id="charts">
+            <div id="years">
+                <p></p>
+                <svg></svg>
+            </div>
+            <div id="quarters">
+                <p></p>
+                <svg></svg>
+            </div>
+            <div id="vehicles">
+                <p></p>
+                <svg></svg>
+            </div>
+        </div>
+        <script src="/d3.v7.min.js"></script>
+        <script src="project.js" type="module"></script>
+
+    </body>
+
+</html>
