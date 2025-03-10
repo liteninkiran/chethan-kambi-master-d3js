@@ -4,6 +4,7 @@ const svg = d3.select('svg');
 svg.on('click', (e, _d) => {
     const pointer = d3.pointer(e);
     console.log(`SVG click... X:${pointer[0]} Y:${pointer[1]}`);
+    console.log(pointer);
 });
 
 const circle = svg.select('circle');
