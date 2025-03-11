@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Project - Linear Scale</title>
+        <link rel="stylesheet" href="project.css">
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <div id="header">
+                <h1>Project: Linear Scale</h1>
+                <p>Top 10 countries with highest population density (in km<span class="power">2</span>)</p>
+            </div>
+
+            <div id="chart">
+                <svg></svg>
+            </div>
+
+            <div id="output">
+                <h3 name="scale">
+                    Enter any number between 0 and 100 (in the left box) to get a corresponding population
+                    density value, with 100 being the maximum rating for the population density of Macao
+                </h3>
+                <input type="text" name="scale" id="scaleinput">
+                <button type="submit" name="scale" id="scalesubmit">Get Population Density</button>
+                <p id="scaleoutput"></p>
+            </div>
+
+        </div>
+
+        <script src="/d3.v7.min.js"></script>
+        <script src="project.js" type="module"></script>
+    </body>
+
+</html>
