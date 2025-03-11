@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Project</title>
+        <link rel="stylesheet" href="project.css">
+    </head>
+
+    <body>
+
+        <div id="container">
+
+
+            <div>
+                <h1 style="color: dimgray; text-align: center;">Depreciation Chart of Cars</h1>
+            </div>
+
+            <div id="header">
+                <label for="cost">Vehicle Cost (£):</label>
+                <input type="text" id="cost">
+                <label for="rate">Exponential Depreciation Rate (%):</label>
+                <input type="text" id="rate">
+                <button type="submit">CHECK</button>
+            </div>
+
+            <div id="chart">
+                <svg></svg>
+            </div>
+        </div>
+
+        <script src="/d3.v7.min.js"></script>
+        <script src="project.js"></script>
+    </body>
+
+</html>
