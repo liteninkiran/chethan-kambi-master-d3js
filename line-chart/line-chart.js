@@ -15,6 +15,12 @@ const svg = d3.select('#chart-container')
     .append('g')
     .attr('transform', `translate(${margin.left},${margin.top})`);
 
+// create tooltip div
+
+const tooltip = d3.select('body')
+    .append('div')
+    .attr('class', 'tooltip');
+
 // Get data
 d3.csv('jdi_data_daily.csv').then(function (dataset) {
     // Parse the date and convert the population to a number
@@ -88,7 +94,6 @@ d3.csv('jdi_data_daily.csv').then(function (dataset) {
         .attr('stroke-width', .5);
 
     // Create the line generator
-
     const line = d3.line()
         .x(d => x(d.date))
         .y(d => y(d.population));
@@ -100,6 +105,54 @@ d3.csv('jdi_data_daily.csv').then(function (dataset) {
         .attr('stroke', 'steelblue')
         .attr('stroke-width', 1)
         .attr('d', line);
+
+    // Add a circle element
+    const circle = svg.append('circle')
+        .attr('r', 0)
+        .attr('fill', 'steelblue')
+        .style('stroke', 'white')
+        .attr('opacity', .70)
+        .style('pointer-events', 'none');
+
+    // create a listening rectangle
+
+    const listeningRect = svg.append('rect')
+        .attr('width', width)
+        .attr('height', height);
+
+    listeningRect.on('mousemove', function (event) {
+        const [xCoord] = d3.pointer(event, this);
+        const bisectDate = d3.bisector(d => d.date).left;
+        const x0 = x.invert(xCoord);
+        const i = bisectDate(dataset, x0, 1);
+        const d0 = dataset[i - 1];
+        const d1 = dataset[i];
+        const d = x0 - d0.date > d1.date - x0 ? d1 : d0;
+        const xPos = x(d.date);
+        const yPos = y(d.population);
+
+        // Update the circle position
+        circle.attr('cx', xPos)
+            .attr('cy', yPos);
+
+        // Add transition for the circle radius
+        circle.transition()
+            .duration(50)
+            .attr('r', 5);
+
+        // Add in our tooltip
+        tooltip
+            .style('display', 'block')
+            .style('left', `${xPos + 100}px`)
+            .style('top', `${yPos + 50}px`)
+            .html(`<strong>Date:</strong> ${d.date.toLocaleDateString()}<br><strong>Population:</strong> ${d.population !== undefined ? (d.population / 1000).toFixed(0) + 'k' : 'N/A'}`)
+    });
+
+    // Listening rectangle mouse leave function
+    listeningRect.on('mouseleave', () => {
+        circle.transition().duration(50).attr('r', 0);
+        tooltip.style('display', 'none');
+    });
 
     // Add Y-axis label
     svg.append('text')
