@@ -15,8 +15,7 @@ const svg = d3.select('#chart-container')
     .append('g')
     .attr('transform', `translate(${margin.left},${margin.top})`);
 
-// create tooltip div
-
+// Create tooltip div
 const tooltip = d3.select('body')
     .append('div')
     .attr('class', 'tooltip');
@@ -114,8 +113,7 @@ d3.csv('jdi_data_daily.csv').then(function (dataset) {
         .attr('opacity', .70)
         .style('pointer-events', 'none');
 
-    // create a listening rectangle
-
+    // Create a listening rectangle
     const listeningRect = svg.append('rect')
         .attr('width', width)
         .attr('height', height);
